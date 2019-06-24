@@ -263,6 +263,7 @@ class client {
         if (contentPrefix != prefix) {
 
             // Handle Reactions;
+            /*
             let res = this.getResponse(guildId, receivedMessage.content);
             if (res) {
                 if (this.validate(receivedMessage, "response")) {
@@ -270,7 +271,7 @@ class client {
                 } else {
                     log(`Permission Denied, User: ${receivedMessage.author.id}, Command: ${command}`);
                 }
-            }
+            }*/
             
             return;
         }
