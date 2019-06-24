@@ -1,23 +1,26 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "jimbot packages",
-  "main": "jimbot.js",
+  "description": "infinity packages",
+  "main": "main.js",
   "dependencies": {
-    "sodium": "^2.0.3",
+    "bufferutil": "^3.0.3",
     "canvas": "^2.4.1",
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.4.2",
-    "googleapis": "^27.0.0",
-    "image-size": "^0.7.4",
-    "merge-images": "^1.1.0",
-    "nodemw": "^0.12.2",
-    "request": "^2.88.0",
-    "bufferutil": "^3.0.3",
     "erlpack": "discordapp/erlpack",
-    "node-opus": "^0.2.7",
-    "opusscript": "^0.0.6",
+    "googleapis": "^27.0.0",
+    "html-to-image": "^0.1.1",
+    "image-size": "^0.7.4",
+    "jsdom": "^15.1.1",
     "libsodium-wrappers": "^0.7.3",
+    "merge-images": "^1.1.0",
+    "node-opus": "^0.2.7",
+    "nodemw": "^0.12.2",
+    "opusscript": "^0.0.6",
+    "puppeteer": "^1.18.0",
+    "request": "^2.88.0",
+    "sodium": "^2.0.3",
     "uws": "^9.14.0"
   },
   "devDependencies": {},
@@ -30,14 +33,6 @@
     "docker-debug": "docker-compose up",
     "start": "node ./bin/jimbot.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BlunterMonk/Jimbot.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BlunterMonk/Jimbot/issues"
-  },
-  "homepage": "https://github.com/BlunterMonk/Jimbot#readme"
+  "license": "ISC"
 }

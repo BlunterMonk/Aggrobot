@@ -128,5 +128,9 @@ String.prototype.closestMatchIn = function (list: string[], threshold: number): 
 
     return null;
 }
+String.prototype.allTrim = function () {
+    return this.replace(/\s+/g,' ')
+                .replace(/^\s+|\s+$/,'');
+};
 
 module.exports = String;

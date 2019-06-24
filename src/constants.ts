@@ -41,3 +41,13 @@ export const shieldList = ["lightShield", "heavyShield"];
 export const headList = ["hat", "helm"];
 export const bodyList = ["clothes", "robe", "lightArmor", "heavyArmor"];
 
+export const spellIcons = {
+    "abjucation": "https://media-waterdeep.cursecdn.com/attachments/2/707/abjuration.png",
+    "conjuration": "https://media-waterdeep.cursecdn.com/attachments/2/708/conjuration.png",
+    "divination": "https://media-waterdeep.cursecdn.com/attachments/2/709/divination.png",
+    "enchantment": "https://media-waterdeep.cursecdn.com/attachments/2/702/enchantment.png",
+    "evocation": "https://media-waterdeep.cursecdn.com/attachments/2/703/evocation.png",
+    "illusion": "https://media-waterdeep.cursecdn.com/attachments/2/704/illusion.png",
+    "necromancy": "https://media-waterdeep.cursecdn.com/attachments/2/720/necromancy.png",
+    "transmutation": "https://media-waterdeep.cursecdn.com/attachments/2/722/transmutation.png"
+}

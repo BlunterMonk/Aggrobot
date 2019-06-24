@@ -26,15 +26,6 @@ function getSearchString(msg, replace = true) {
         return null;
     }
 
-    if (replace == undefined || replace) { 
-        var s = search;
-        var alias = config.getAlias(s.replaceAll(" ", "_"));
-        if (alias) {
-            log("Found Alias: " + alias);
-            return alias.replaceAll(" ", "_");
-        }
-    }
-
     search = search.toLowerCase();
     search = search.replaceAll(" ", "_");
     return search;

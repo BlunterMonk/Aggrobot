@@ -16,8 +16,9 @@ import {getCommandString} from "./commands/commands.js";
     "ready"
     "message"
  */
-const bot_secret_token = "NTY0NTc5NDgwMzk2NjI3OTg4.XK5wQQ.4UDNKfpdLOYg141a9KDJ3B9dTMg"; // prod
-// const bot_secret_token = "NTY1NjkxMzc2NTA3OTQ0OTcy.XK6HUg.GdFWKdG4EwdbQWf7N_r2eAtuxtk"; // test
+// const bot_secret_token = "NTY0NTc5NDgwMzk2NjI3OTg4.XK5wQQ.4UDNKfpdLOYg141a9KDJ3B9dTMg"; // prod
+//https://discordapp.com/api/oauth2/authorize?client_id=592074110071341062&scope=bot&permissions=391232
+const bot_secret_token = "NTkyMDc0MTEwMDcxMzQxMDYy.XQ6CpA.5ZGpChEH8g8rgr2Zd_dd6xCja3U"; // test
 
 class client {
     discordClient: Discord.Client;
@@ -30,9 +31,7 @@ class client {
         this.guildSettings = {};
         this.botMessages = [];
         this.authorizedUsers = [
-            "159846139124908032", // renaulteUserID
             "131139508421918721", // jimooriUserID
-            "344500120827723777"  // furculaUserID
         ];
     }
 
@@ -111,14 +110,17 @@ class client {
     }
 
     // Send message to the destination based on the reqested location
-    send(receivedMessage, msg, callback = null) {
+    send(receivedMessage, msg, callback = null, error = null) {
         receivedMessage.channel
         .send(msg)
         .then(message => {
             this.cacheBotMessage(receivedMessage.id, message.id);
             if (callback) callback(message);
         })
-        .catch(console.error);
+        .catch(e => {
+            console.error(e);
+            if (error) error(e);
+        });
     }
     sendImage(receivedMessage, filename, callback = null) {
         var Attachment = new Discord.Attachment(filename);
@@ -126,10 +128,10 @@ class client {
             Client.send(receivedMessage, Attachment);
         }
     }
-    sendMessage(receivedMessage, embed, callback = null) {
-        this.send(receivedMessage, {embed: embed}, callback);
+    sendMessage(receivedMessage, embed, callback = null, error = null) {
+        this.send(receivedMessage, {embed: embed}, callback, error);
     }
-    sendMessageWithAuthor(receivedMessage, embed, authorId, callback = null) {
+    sendMessageWithAuthor(receivedMessage, embed, authorId, callback = null, error = null) {
         this.discordClient.fetchUser(authorId)
         .then(author => {
 
@@ -144,7 +146,10 @@ class client {
                 this.cacheBotMessage(receivedMessage.id, message.id);
                 if (callback) callback(message);
             })
-            .catch(console.error);
+            .catch(e => {
+                console.error(e);
+                if (error) error(e);
+            });
         })
         .catch(reason =>{
             console.error(reason);
@@ -159,17 +164,23 @@ class client {
                 this.cacheBotMessage(receivedMessage.id, message.id);
                 if (callback) callback(message);
             })
-            .catch(console.error);
+            .catch(e => {
+                console.error(e);
+                if (error) error(e);
+            });
         });
     }
-    sendPrivateMessage(receivedMessage, embed, callback = null) {
+    sendPrivateMessage(receivedMessage, embed, callback = null, error = null) {
         receivedMessage.author
         .send({embed: embed})
         .then(message => {
             this.cacheBotMessage(receivedMessage.id, message.id);
             if (callback) callback(message);
         })
-        .catch(console.error);
+        .catch(e => {
+            console.error(e);
+            if (error) error(e);
+        });
     }
 
     respondSuccess(receivedMessage, toUser = false) {
