@@ -9,7 +9,7 @@
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.4.2",
     "erlpack": "discordapp/erlpack",
-    "googleapis": "^27.0.0",
+    "googleapis": "^39.1.0",
     "html-to-image": "^0.1.1",
     "image-size": "^0.7.4",
     "jsdom": "^15.1.1",
